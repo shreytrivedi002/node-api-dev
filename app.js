@@ -1,6 +1,8 @@
 var express = require("express");
 const app = express();
 const studentRoute = require("./api/route/studentRoute");
+const taskRoute = require("./api/route/taskRoute");
+
 // db connect
 const mongoose = require("mongoose");
 
@@ -26,6 +28,8 @@ app.use(bodyParser.json());
 
 // routes
 app.use("/student", studentRoute);
+app.use("/task", taskRoute);
+
 //end
 
 // if no routes match
