@@ -1,5 +1,7 @@
 var express = require("express");
+var cors = require('cors')
 const app = express();
+
 const studentRoute = require("./api/route/studentRoute");
 const taskRoute = require("./api/route/taskRoute");
 
@@ -18,6 +20,8 @@ mongoose.connection.on("connected", (cnt) => {
   console.log("connected");
 });
 //end
+
+app.use(cors())
 
 // bodyparser
 const bodyParser = require("body-parser");
